@@ -6,21 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start-dev": "webpack serve --config webpack.config.js"
+    "start": "webpack serve --config webpack.config.js",
+    "prepare": "husky"
   },
   "author": "KC-Hoyts",
   "license": "ISC",
   "dependencies": {
-    "dropdown": "^0.2.0",
     "eslint-webpack-plugin": "^4.0.1",
     "json-server": "^1.0.0-alpha.23"
   },
   "devDependencies": {
     "css-loader": "^6.10.0",
     "eslint": "^8.56.0",
-    "express": "^4.18.2",
-    "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.0.10",
     "mini-css-extract-plugin": "^2.8.0",
     "style-loader": "^3.3.4",
     "webpack": "^5.90.1",

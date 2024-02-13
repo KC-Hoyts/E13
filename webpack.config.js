@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 
-
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -18,30 +17,17 @@ module.exports = {
     devServer: {
         static: './dist',
         port: 3000,
-        hot: true,
+        hot: "only", // обязательно указать only, чтобы страница подтягивала изменения ч/з Websocket (а не перезагружалась как при true)
         // open: true, // open the server page in browser
-        watchFiles: ['src/*.html'],
     },
     plugins: [
                 new MiniCssExtractPlugin(),
-                new HtmlWebpackPlugin({
-                                         template: "./src/index.html", inject: true}),
-                new ESLintPlugin()
+                new HtmlWebpackPlugin({ template: "./src/index.html"}), // указываем основной html-файл для отображения страницы в браузере
+                new ESLintPlugin({emitWarning: true}),
             ],
     module: {
         rules: [
-            { test: /\.css$/,
-            use: [{ loader: MiniCssExtractPlugin.loader, options: {
-                                                                    esModule: true,
-                                                                  }
-                    }, 'css-loader'] 
-            },
-            {
-                test: /\.html$/,
-                loader: "html-loader",
-              },
-            
- 
+                { test: /\.css$/, use: [{ loader: MiniCssExtractPlugin.loader, options: {esModule: true,}}, 'css-loader']},
         ]
     },
 };
