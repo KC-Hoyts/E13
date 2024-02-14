@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAAA;IACI,4BAA4B;IAC5B,uBAAuB;IACvB,YAAY;IACZ,gBAAgB;IAChB,eAAe;;AAEnB,C","sources":["webpack://test-app/./src/style.css"],"sourcesContent":["body {\r\n    /* background-color: grey; */\r\n    background-color: black;\r\n    color: white;\r\n    /* color: red; */\r\n    font-size: 20px;\r\n\r\n}"],"names":[],"sourceRoot":""}

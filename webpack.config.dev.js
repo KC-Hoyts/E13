@@ -16,9 +16,9 @@ module.exports = {
     mode: "development",
     devServer: {
         static: './dist',
-        port: 3000,
+        port: 3001,
         hot: "only", // обязательно указать only, чтобы страница подтягивала изменения ч/з Websocket (а не перезагружалась как при true)
-        // open: true, // open the server page in browser
+        open: true, // open the server page in browser
     },
     plugins: [
                 new MiniCssExtractPlugin(),
